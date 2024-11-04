@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Players from "../pages/Players";
 import { Link } from "react-router-dom";
+import logo from "../assets/sapuCraftLogo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +8,33 @@ function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const links = [
+    {
+      to: "/players",
+      name: "Players",
+    },
+    {
+      to: "/memories",
+      name: "Memories",
+    },
+    {
+      to: "/events",
+      name: "Events",
+    },
+    {
+      to: "/rules",
+      name: "Rules",
+    },
+  ];
   return (
     <nav className="w-full h-16 bg-[#35CE8D] text-[#E0D2C3] flex items-center relative ">
       <div className="container mx-auto flex justify-between items-center">
-        <div>Logo</div>
+        <div>
+          <Link to="/">
+            <img src={logo} alt="" className="h-8" />
+          </Link>
+        </div>
         {/* Burger */}
         <div className="flex z-40">
           <button onClick={toggleMenu}>
@@ -37,21 +60,18 @@ function Navbar() {
         } bg-[#6BA292] w-1/5 h-screen absolute right-0 top-0 pt-52`}
       >
         <ul className="flex flex-col space-y-4 items-center">
-          <li>
-            <Link to="/players" onClick={() => setIsOpen(false)}>
-              Players
-            </Link>
-          </li>
-          <li>
-            <Link to="/players" onClick={() => setIsOpen(false)}>
-              Players
-            </Link>
-          </li>
-          <li>
-            <Link to="/players" onClick={() => setIsOpen(false)}>
-              Players
-            </Link>
-          </li>
+          {links.map(({ to, name }, index) => {
+            return (
+              <li
+                key={index}
+                className="relative hover:text-[#79D3A2] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
+              >
+                <Link to={to} onClick={() => setIsOpen(false)}>
+                  {name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>

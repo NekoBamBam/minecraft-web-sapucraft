@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 
 function Home() {
   return (
-    <div className="hero h-screen relative">
+    <div className="hero h-screen relative z-10">
       <div
         className="absolute inset-0"
         style={{
