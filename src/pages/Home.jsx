@@ -17,19 +17,17 @@ function Home() {
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-          <div className="text-[#35CE8D] text-2xl">
+          <div className="text-[#05AF9E] text-2xl">
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .typeString("Bienvenidos a SapuCraft!")
-                  .callFunction(() => {
-                    console.log("String typed out!");
-                  })
+                  .callFunction(() => {})
                   .start();
               }}
             />
           </div>
-          <p className="mb-5 text-white">
+          <p className="mb-5 text-[#E0D2C3]">
             Ven y adentrate en la emocionante aventura al son de la guitarra
             payando y el sapucay de un gaucho de fondo
           </p>

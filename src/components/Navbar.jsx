@@ -28,8 +28,8 @@ function Navbar() {
     },
   ];
   return (
-    <nav className="w-full h-16 bg-[#35CE8D] text-[#E0D2C3] flex items-center relative ">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="h-16 bg-[#6B353F] text-[#E0D2C3] flex items-center relative">
+      <div className="container m-10 flex justify-between items-center lg:mx-auto">
         <div>
           <Link to="/">
             <img src={logo} alt="" className="h-8" />
@@ -43,7 +43,7 @@ function Navbar() {
               width="36"
               height="36"
               fill="#E0D2C3"
-              class="bi bi-list"
+              class="bi bi-list hover:fill-[#E46F18]"
               viewBox="0 0 16 16"
             >
               <path
@@ -57,14 +57,14 @@ function Navbar() {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } bg-[#6BA292] w-1/5 h-screen absolute right-0 top-0 pt-52`}
+        } bg-[#6B353F] border border-[#E0D2C3] lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52`}
       >
         <ul className="flex flex-col space-y-4 items-center">
           {links.map(({ to, name }, index) => {
             return (
               <li
                 key={index}
-                className="relative hover:text-[#79D3A2] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
+                className="relative hover:text-[#E46F18] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
               >
                 <Link to={to} onClick={() => setIsOpen(false)}>
                   {name}
