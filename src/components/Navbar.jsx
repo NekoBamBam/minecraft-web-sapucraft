@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/sapuCraftLogo.png";
+import NavbarImg from "../assets/NavbarImg.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ function Navbar() {
     },
   ];
   return (
-    <nav className="h-16 bg-[#6B353F] text-[#E0D2C3] flex items-center relative">
+    <nav className="h-16 text-[#E0D2C3] flex items-center border-b border-[#E0D2C3]">
       <div className="container m-10 flex justify-between items-center lg:mx-auto">
         <div>
           <Link to="/">
@@ -57,8 +58,9 @@ function Navbar() {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } bg-[#6B353F] border border-[#E0D2C3] lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52`}
+        }  border border-[#E0D2C3] lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30`}
       >
+        <div  className="absolute inset-0 bg-[#]"></div>
         <ul className="flex flex-col space-y-4 items-center">
           {links.map(({ to, name }, index) => {
             return (

@@ -1,16 +1,16 @@
-import HeroImg from "../assets/HeroImg.png";
+import HeroImg from "../assets/HeroImg.jpeg";
 import Typewriter from "typewriter-effect";
 
 function Home() {
   return (
     <div className="hero h-screen relative z-10">
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 h-full"
         style={{
           backgroundImage: `url(${HeroImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(8px)",
+          filter: "blur(4px)",
           zIndex: -1,
         }}
       ></div>
