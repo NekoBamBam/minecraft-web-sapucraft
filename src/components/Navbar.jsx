@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/sapuCraftLogo.png";
+import logo from "../assets/icono1.png";
 import NavbarImg from "../assets/NavbarImg.png";
 
 function Navbar() {
@@ -23,17 +23,13 @@ function Navbar() {
       to: "/events",
       name: "Events",
     },
-    {
-      to: "/rules",
-      name: "Rules",
-    },
   ];
   return (
-    <nav className="h-16 text-[#E0D2C3] flex items-center border-b border-[#E0D2C3]">
-      <div className="container m-10 flex justify-between items-center lg:mx-auto">
+    <nav className="h-16 text-[#E0D2C3] flex items-center ">
+      <div className="container m-10 flex justify-between items-center lg:mx-auto ">
         <div>
           <Link to="/">
-            <img src={logo} alt="" className="h-8" />
+            <img src={logo} alt="" className="h-20" />
           </Link>
         </div>
         {/* Burger */}
@@ -58,7 +54,7 @@ function Navbar() {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        }  border border-[#E0D2C3] lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30`}
+        }  border border-[#E0D2C3] bg-black bg-opacity-45 lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30`}
       >
         <div  className="absolute inset-0 bg-[#]"></div>
         <ul className="flex flex-col space-y-4 items-center">
