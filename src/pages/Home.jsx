@@ -1,5 +1,5 @@
 import HeroImg from "../assets/HeroImg.jpeg";
-import Typewriter from "typewriter-effect";
+import logo from "../assets/sapucraft.png";
 
 function Home() {
   return (
@@ -10,22 +10,15 @@ function Home() {
           backgroundImage: `url(${HeroImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(4px)",
+          filter: "blur(1px)",
           zIndex: -1,
         }}
       ></div>
       <div className="hero-overlay bg-opacity-60"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-          <div className="text-[#05AF9E] text-2xl">
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Bienvenidos a SapuCraft!")
-                  .callFunction(() => {})
-                  .start();
-              }}
-            />
+          <div>
+            <img src={logo} alt="" />
           </div>
           <p className="mb-5 text-[#E0D2C3]">
             Ven y adentrate en la emocionante aventura al son de la guitarra

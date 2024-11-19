@@ -1,27 +1,34 @@
 import "swiper/swiper-bundle.css";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { getFirestore, doc, getDocs, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 function Players() {
-  const [data, useData] = useState({});
-
+  const [data, setData] = useState();
   useEffect(() => {
     const querydb = getFirestore();
-    const queryDoc = doc(querydb, "players", "0qzOfnZUvuDEdSboUIdm");
-    getDoc(queryDoc).then(res => console.log(res));
+    const queryCollection = collection(querydb, "players");
+    getDocs(queryCollection).then((res) =>
+      setData(
+        res.docs.map((players) => ({ id: players.id, ...players.data() }))
+      )
+    );
   }, []);
+  console.log(data);
+
   return (
     <div className="w-full h-full flex justify-center items-center  flex-col gap-4">
-      {/*  <div className="border border-[#E46F18] rounded-md bg-[#353335] p-5 lg:w-1/3 w-full mt-10 lg:mt-0">
-        <Swiper spaceBetween={10} slidesPerView={3} loop={true} pagination>
-          {players.map(({ icon, player }, index) => {
-            return <SwiperSlide key={index}>
-              <div>hola</div>
-            </SwiperSlide>;
-          })}
-        </Swiper>
-      </div> */}
+      <Swiper className="border w-3/4" spaceBetween={0.5} slidesPerView={2}>
+        {data
+          ? data.map((player) => {
+              return (
+                <SwiperSlide>
+                  <img src={player.logo} alt="" />
+                </SwiperSlide>
+              );
+            })
+          : false}
+      </Swiper>
     </div>
   );
 }
