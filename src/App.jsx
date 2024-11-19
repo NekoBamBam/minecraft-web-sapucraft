@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./firebase/config.js";
 import Home from "./pages/Home";
 import Players from "./pages/Players";
 import Layout from "./layouts/Layout";
 import Memories from "./pages/Memories.Jsx";
-import "./firebase/config.js"
+import Events from "./pages/Events.jsx";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/players" element={<Players />} />
           <Route path="/memories" element={<Memories />} />
+          <Route path="/events" element={<Events />} />
         </Route>
       </Routes>
     </BrowserRouter>
