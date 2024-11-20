@@ -56,13 +56,13 @@ function Navbar() {
           isOpen ? "block" : "hidden"
         }  border border-[#E0D2C3] bg-black bg-opacity-45 lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30`}
       >
-        <div  className="absolute inset-0 bg-[#]"></div>
+        <div className="absolute inset-0 bg-[#]"></div>
         <ul className="flex flex-col space-y-4 items-center">
           {links.map(({ to, name }, index) => {
             return (
               <li
                 key={index}
-                className="relative hover:text-[#E46F18] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
+                className="relative hover:text-[#57CB02] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
               >
                 <Link to={to} onClick={() => setIsOpen(false)}>
                   {name}

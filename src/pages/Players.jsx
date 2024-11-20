@@ -1,27 +1,74 @@
 import "swiper/swiper-bundle.css";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { getFirestore, doc, getDocs, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 function Players() {
-  const [data, useData] = useState({});
+  const [data, setData] = useState(undefined);
+  const [currentPlayer, setCurrentPlayer] = useState(undefined);
 
   useEffect(() => {
     const querydb = getFirestore();
-    const queryDoc = doc(querydb, "players", "0qzOfnZUvuDEdSboUIdm");
-    getDoc(queryDoc).then(res => console.log(res));
+    const queryCollection = collection(querydb, "players");
+    getDocs(queryCollection).then((res) =>
+      setData(
+        res.docs.map((players) => ({ id: players.id, ...players.data() }))
+      )
+    );
   }, []);
+
   return (
-    <div className="w-full h-full flex justify-center items-center  flex-col gap-4">
-      {/*  <div className="border border-[#E46F18] rounded-md bg-[#353335] p-5 lg:w-1/3 w-full mt-10 lg:mt-0">
-        <Swiper spaceBetween={10} slidesPerView={3} loop={true} pagination>
-          {players.map(({ icon, player }, index) => {
-            return <SwiperSlide key={index}>
-              <div>hola</div>
-            </SwiperSlide>;
-          })}
-        </Swiper>
-      </div> */}
+    <div className="w-full h-full flex justify-center items-center flex-col gap-4">
+      <Swiper
+        className="border w-1/2 h-12"
+        spaceBetween={0.5}
+        slidesPerView={2}
+        effect="cube"
+      >
+        {data ? (
+          data.map((player) => {
+            return (
+              <SwiperSlide key={player.id}>
+                <button
+                  onClick={() =>
+                    setCurrentPlayer({
+                      id: player.id,
+                      logo: player.logo,
+                      skin: player.skin,
+                    })
+                  }
+                >
+                  <img src={player.logo} alt={player.id} className="h-12" />
+                </button>
+              </SwiperSlide>
+            );
+          })
+        ) : (
+          <p>Ha ocurrido un error al cargar la información</p>
+        )}
+      </Swiper>
+      <div className="border border-red-500 w-1/2 h-1/2">
+        {currentPlayer ? (
+          <div className="flex">
+            <div className="text-2xl text-purple-600 w-1/2">
+              <p>{currentPlayer.id}</p>
+            </div>
+            <div className="w-1/2 flex justify-center items-center">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+                obcaecati quidem fuga quibusdam esse, aut dolore deleniti? Aut
+                sed nobis quidem aliquam eius, quisquam eum ut minus
+                perspiciatis ratione placeat.
+              </p>
+            </div>
+            <div className="flex w-1/2 h-full justify-end">
+              <img src={currentPlayer.skin} alt="" />
+            </div>
+          </div>
+        ) : (
+          false
+        )}
+      </div>
     </div>
   );
 }
