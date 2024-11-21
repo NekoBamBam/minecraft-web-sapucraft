@@ -2,6 +2,7 @@ import "swiper/swiper-bundle.css";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import fondo from "../assets/fondo.png";
 
 function Players() {
   const [data, setData] = useState(undefined);
@@ -18,9 +19,17 @@ function Players() {
   }, []);
 
   return (
-    <div className="w-full h-full flex justify-center items-center flex-col gap-4">
+    <div
+      className="w-full h-full flex justify-center items-center flex-col gap-4 "
+      style={{
+        backgroundImage: `url(${fondo})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        
+      }}
+    >
       <Swiper
-        className="border w-1/2 h-12"
+        className="border w-1/2 h-16 bg-zinc-800"
         spaceBetween={0.5}
         slidesPerView={2}
         effect="cube"
@@ -47,7 +56,7 @@ function Players() {
           <p>Ha ocurrido un error al cargar la información</p>
         )}
       </Swiper>
-      <div className="border border-red-500 w-1/2 h-1/2">
+      <div className="border border-red-500 w-1/2 h-1/2 bg-black">
         {currentPlayer ? (
           <div className="flex">
             <div className="text-2xl text-purple-600 w-1/2">
