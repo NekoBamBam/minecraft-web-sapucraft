@@ -24,6 +24,7 @@ function Players() {
         spaceBetween={0.5}
         slidesPerView={2}
         effect="cube"
+        loop={true}
       >
         {data ? (
           data.map((player) => {

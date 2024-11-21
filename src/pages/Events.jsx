@@ -13,7 +13,7 @@ function Events() {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center">
+    <div className="flex flex-col items-center justify-start min-h-screen pt-44">
       <div>
         {data
           ? data.map((event, index) => {
