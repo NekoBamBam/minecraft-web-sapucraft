@@ -15,12 +15,12 @@ function Memories() {
   }, []);
 
   return (
-    <div className="w-full h-full flex items-start justify-center">
-      <div className="">
+    <div className="flex items-center justify-center">
+      <div className="flex">
         {data
           ? data.map((memorie, index) => {
               return (
-                <div key={index} className="">
+                <div key={index} className="flex items-center">
                   {memorie.image ? (
                     <img src={memorie.image} alt="" className="w-80" />
                   ) : (
