@@ -55,6 +55,7 @@ Prohibido el spam: No abuses del chat con mensajes repetitivos o innecesarios.
               <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
                 Modo de Juego{" "}
               </p>
+              
             </div>
             <div className="relative w-1/4 h-96 ">
               <img

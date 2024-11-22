@@ -29,7 +29,7 @@ function Players() {
       }}
     >
       <Swiper
-        className="border w-1/2 h-16 bg-zinc-800"
+        className="border w-1/2 h-16 bg-zinc-800 "
         spaceBetween={0.5}
         slidesPerView={2}
         effect="cube"
