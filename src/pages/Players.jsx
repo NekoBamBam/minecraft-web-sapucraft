@@ -63,7 +63,7 @@ function Players() {
               </p>
             </div>
             <div className="flex w-1/2 h-full justify-end">
-              <img src={currentPlayer.skin} alt="" />
+              <img src={currentPlayer.skin} alt="" className="h-64"/>
             </div>
           </div>
         ) : (

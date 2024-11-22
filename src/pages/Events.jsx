@@ -19,7 +19,7 @@ function Events() {
           ? data.map((event, index) => {
               return <div key={index} className="flex flex-col justify-center items-center gap-2">
                 <p className="text-2xl">{event.name}</p>
-                <img src={event.image} alt="" className="h-64"/>
+                <img src={event.image} alt="" className="h-96"/>
                 <p>{event.date}</p>
                 <p className="w-1/2">{event.description}</p>
               </div>;
