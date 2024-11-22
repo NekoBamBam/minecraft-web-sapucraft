@@ -24,7 +24,7 @@ function Navbar() {
     },
   ];
   return (
-    <nav className="h-16 text-[#E0D2C3] flex items-center ">
+    <nav className="h-16 text-[#E0D2C3] flex items-center backdrop-blur-2xl shadow-sm bg-opacity-5 bg-gray-300">
       <div className="container m-10 flex justify-between items-center lg:mx-auto ">
         <div>
           <Link to="/">
@@ -53,7 +53,7 @@ function Navbar() {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        }  border border-[#F8F3F0] bg-black bg-opacity-45 lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30 bg-[#030A0D]`}
+        }    lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30 bg-gray-900 bg-opacity-40`}
       >
         <div className="absolute inset-0 bg-[#]"></div>
         <ul className="flex flex-col space-y-4 items-center">

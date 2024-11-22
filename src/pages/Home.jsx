@@ -20,7 +20,7 @@ function Home() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
-            <div className="text-[#05AF9E] text-2xl">
+            <div className="text-[#05AF9E]  text-2xl">
               <img src={logo} alt="" />
             </div>
             <p className="mb-5 text-[#E0D2C3]">
@@ -31,7 +31,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="h-screen">
+      <div className="h-full">
         <div
           className="flex flex-col justify-center items-center h-full w-full"
           style={{
