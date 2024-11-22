@@ -1,12 +1,11 @@
 import React from "react";
 import rancio from "../assets/rancioarmy.png";
 import fondobe from "../assets/images.jpeg";
-import { useHref } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer
-      className="footer bg-neutral text-neutral-content p-10"
+      className="footer bg-neutral text-neutral-content p-10 justify-between"
       style={{ backgroundImage: `url(${fondobe})` }}
     >
       <aside>
@@ -18,9 +17,10 @@ const Footer = () => {
         </p>
       </aside>
       <nav>
+        
         <h6 className="footer-title ">Colabs</h6>
         <div className="grid grid-cols-2 gap-4 text-lg">
-          <p>Coria Franco Nicolas</p>
+          <p >Coria Franco Nicolas</p>
           <button
             onClick={() =>
               window.open ( "https://github.com/NekoBamBam", "_blank")

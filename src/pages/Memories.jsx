@@ -16,18 +16,18 @@ function Memories() {
 
 
   return (
-    <div className="w-full h-full flex items-start justify-center">
-      <div className="">
+    <div className="flex flex-col items-center justify-start min-h-screen pt-44">
+      <div className="grid grid-cols-3 justify-center gap-20">
         {data
           ? data.map((memorie, index) => {
               return (
-                <div key={index} className="">
+                <div key={index} className="flex flex-col justify-evenly mb-8 w-full max-w-md px-4">
                   {memorie.image ? (
-                    <img src={memorie.image} alt="" className="w-80" />
+                    <img src={memorie.image} alt="" className="w-auto" />
                   ) : (
                     <p>La imagen no ha cargado correctamente</p>
                   )}
-                  <p>{memorie.description}</p>
+                  <p className="mt-2 text-center">{memorie.description}</p>
                 </div>
               );
             })

@@ -13,13 +13,13 @@ function Events() {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center">
+    <div className="flex flex-col items-center justify-start min-h-screen pt-44">
       <div>
         {data
           ? data.map((event, index) => {
               return <div key={index} className="flex flex-col justify-center items-center gap-2">
                 <p className="text-2xl">{event.name}</p>
-                <img src={event.image} alt="" className="h-64"/>
+                <img src={event.image} alt="" className="h-96"/>
                 <p>{event.date}</p>
                 <p className="w-1/2">{event.description}</p>
               </div>;
