@@ -22,27 +22,54 @@ function Home() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
-            <div className="text-[#05AF9E] text-2xl">
+            <div className="text-[#05AF9E]  text-2xl">
               <img src={logo} alt="" />
             </div>
-            <p className="mb-5 text-[#E0D2C3]">
+            <p className="mb-5 text-[#E0D2C3] ">
               Ven y adentrate en la emocionante aventura al son de la guitarra
               payando y el sapucai de un gaucho de fondo
             </p>
-            <span>Jugadores en linea: 0</span>
+            <span className="text-green-500">Jugadores en linea: 2</span>
+            <div className="mt-10 font-arial">
+            {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <button
+              className="btn bg-amber-900 text-white"
+              onClick={() => document.getElementById("my_modal_1").showModal()}
+            >
+              Querés colaborar?
+            </button>
+            <dialog id="my_modal_1" className="modal bg-black bg-opacity-60">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">Cvu para la causa!</h3>
+                <p className="py-4">
+                  Press ESC key or click the button below to close
+                </p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn">Close</button>
+                  </form>
+                </div>
+              </div>
+            </dialog>
           </div>
+          </div>
+         
         </div>
+        
       </div>
       <div className="h-screen">
         <div className="flex flex-col items-center h-full w-full  bg-gradient-to-b from-[#011526A1] to-[#044D8CA1] ">
           <div className="flex justify-start gap-4 mt-16  font-arial font-extrabold ">
             <p className="text-8xl text-white">REGLAS</p>
             <p className="text-xs">
-            Respeto mutuo: No insultar ni acosar a otros jugadores. Este es un espacio amigable para todos.
-Nada de trampas: No se permite el uso de hacks, mods de ventaja o exploits que arruinen la experiencia.
-Evita el griefing: No destruir construcciones ajenas, a menos que el dueño lo permita.
-No robar: Respeta los cofres, pertenencias y recursos de otros jugadores.
-Prohibido el spam: No abuses del chat con mensajes repetitivos o innecesarios.
+              Respeto mutuo: No insultar ni acosar a otros jugadores. Este es un
+              espacio amigable para todos. Nada de trampas: No se permite el uso
+              de hacks, mods de ventaja o exploits que arruinen la experiencia.
+              Evita el griefing: No destruir construcciones ajenas, a menos que
+              el dueño lo permita. No robar: Respeta los cofres, pertenencias y
+              recursos de otros jugadores. Prohibido el spam: No abuses del chat
+              con mensajes repetitivos o innecesarios.
             </p>
           </div>
           <div className="flex place-content-between p-10 gap-24 ">
@@ -52,10 +79,9 @@ Prohibido el spam: No abuses del chat con mensajes repetitivos o innecesarios.
                 alt=""
                 className="rounded-md w-full h-full object-cover"
               />
-              <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
+              <p className="absolute inset-0 flex items-end justify-center text-white text-2xl font-bold">
                 Modo de Juego{" "}
               </p>
-              
             </div>
             <div className="relative w-1/4 h-96 ">
               <img
@@ -63,7 +89,7 @@ Prohibido el spam: No abuses del chat con mensajes repetitivos o innecesarios.
                 alt=""
                 className="rounded-md w-full h-full object-cover"
               />
-              <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
+              <p className="absolute inset-0 flex items-end justify-center text-white text-2xl font-bold">
                 Convivencia{" "}
               </p>
             </div>
@@ -73,7 +99,7 @@ Prohibido el spam: No abuses del chat con mensajes repetitivos o innecesarios.
                 alt=""
                 className="rounded-md w-full h-full object-cover"
               />
-              <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
+              <p className="absolute inset-0 flex items-end justify-center text-white text-2xl font-bold">
                 Hacking{" "}
               </p>
             </div>
