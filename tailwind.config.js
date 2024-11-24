@@ -6,7 +6,8 @@ export default {
       fontFamily: {
         minecraft:["Minecraft", "sans-serif"],
         arial:["arial"],
-        Futura:["futura-bold"],
+        futura:["futura-bold"],
+        icon:["icon"],
       },
     },
   },
