@@ -14,33 +14,26 @@ function Events() {
   }, []);
 
   return (
+<div className="bg-gradient-to-r from-[#451669] to-[#470f1c]">
     <div className="flex flex-col items-center justify-start min-h-screen pt-44 ">
-      <div
-        className="absolute inset-0 h-full "
-        style={{
-          backgroundImage: `url(${event})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          zIndex: -1,
-        }}
-      >
         {data
           ? data.map((event, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col justify-center items-center gap-2"
-                >
-                  <p className="text-2xl ">{event.name}</p>
-                  <img src={event.image} alt="" className="h-96" />
+            return (
+              <div
+              key={index}
+              className="flex flex-col justify-center items-center gap-4 w-3/4 h-1/3 rounded-lg bg-gray-900 border-4 border-white"
+              >
+                  <p className="text-6xl text-red-800 font-arial font-extrabold ">{event.name}</p>
+                  <img src={event.image} alt="" className="h-96 " />
                   <p>{event.date}</p>
-                  <p className="w-1/2">{event.description}</p>
+                  <p className="w-1/2 ">{event.description}</p>
                 </div>
               );
             })
-          : false}
-      </div>
+            : false}
+ 
     </div>
+            </div>
   );
 }
 

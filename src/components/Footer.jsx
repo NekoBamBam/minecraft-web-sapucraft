@@ -72,8 +72,8 @@ const Footer = () => {
         {links.map(({ name, link, svg }, index) => {
           return (
             <ul key={index} className="text-xl gap-4">
-              <li className="flex flex-row gap-4 items-center">
-                <p>{name}</p>
+              <li className="flex flex-row gap-4 items-center link">
+                <a href={link} target="_blank">{name}</a >
                 <a href={link} target="_blank">
                   {svg}
                 </a>

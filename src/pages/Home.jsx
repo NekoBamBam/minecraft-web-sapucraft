@@ -9,7 +9,7 @@ function copiarUrl() {
   let url = document.getElementById("url");
   let button = document.getElementById("ButonCopiar");
   navigator.clipboard.writeText(url.textContent);
-  button.textContent = "copiar";
+  button.textContent = "copiado😎";
 }
 
 function Home() {
@@ -28,7 +28,7 @@ function Home() {
           }}
         ></div>
         <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content text-center">
+        <div className="hero-content text-neutral-content text-center ">
           {/* Logo */}
           <div className="max-w-md">
             <div className="text-[#05AF9E]  text-2xl">
@@ -41,31 +41,42 @@ function Home() {
             </p>
             <span className="text-green-500">Jugadores en linea: 2</span>
             {/* Modal message */}
-            <div className="mt-10">
-              {/* Open the modal using document.getElementById('ID').showModal() method */}
+            <div className="mt-10 ">
+              {/*Boton colaboración*/}
               <button
-                className="btn bg-orange-900 text-white font-arial"
+                className="btn bg-orange-900 text-white font-arial "
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
                 }
               >
                 Querés colaborar?
               </button>
-              <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
+              <dialog id="my_modal_1" className="modal ">
+                <div className="modal-box bg-black">
                   <h3 id="url" className="font-bold text-lg font-arial ">
                     0000003100030147433454
                   </h3>
 
-                  <p className="py-4 font-arial">Alias para la causa!</p>
+                  <p className="py-4 font-arial text-green-500">Alias para la causa!</p>
                   <button id="ButonCopiar" onClick={copiarUrl}>
-                    copiar
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-copy"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+                      />
+                    </svg>
                   </button>
 
                   <div className="modal-action">
                     <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
-                      <button className="btn ">Close</button>
+                      <button className="btn bg-orange-900">Close</button>
                     </form>
                   </div>
                 </div>
@@ -75,31 +86,42 @@ function Home() {
         </div>
       </div>
       {/* RULES */}
-      <div className="h-screen bg-gradient-to-r from-[#011526A1] to-[#044D8CA1]">
+      <div className="h-screen bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] border">
         <div className="flex justify-start gap-4 mt-16  font-arial font-extrabold ">
           <p className="text-8xl text-white">REGLAS</p>
           <p className="text-xs">
-            Respeto mutuo: No insultar ni acosar a otros jugadores. Este es un
-            espacio amigable para todos. Nada de trampas: No se permite el uso
-            de hacks, mods de ventaja o exploits que arruinen la experiencia.
-            Evita el griefing: No destruir construcciones ajenas, a menos que el
-            dueño lo permita. No robar: Respeta los cofres, pertenencias y
-            recursos de otros jugadores. Prohibido el spam: No abuses del chat
-            con mensajes repetitivos o innecesarios.
+            Bienvenidos a SapuCraft. A continuación, encontrarás una descripción
+            detallada de las reglas y directrices que hemos establecido para
+            garantizar una experiencia segura, respetuosa y agradable para todos
+            nuestros jugadores. Estas normas están diseñadas para fomentar un
+            entorno en el que todos puedan interactuar de manera positiva y
+            acceder a nuestros contenidos de forma clara y ordenada. Te
+            invitamos a leerlas atentamente antes de continuar navegando por
+            nuestro sitio y servidor.
           </p>
         </div>
         <div className="flex place-content-between p-10 gap-24 ">
-          <div className="relative w-1/4 h-96 ">
+          <div className="relative group w-1/4 h-96">
+            {/* Imagen visible por defecto 1*/}
             <img
               src={modo}
-              alt=""
-              className="rounded-md w-full h-full object-cover"
+              alt="Imagen inicial"
+              className=" rounded-md w-full h-full object-cover"
             />
             <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
-              Modo de Juego{" "}
+              Modo de juego{" "}
             </p>
+            {/* Imagen que aparece al hacer hover 1*/}
+            <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-xl font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height">
+              No arruinar la experiencia de juego del usuario. No está permitido
+              realizar acciones a conciencia que arruinen la experiencia de
+              juego de otros usuarios de cualquier forma. Esto incluye utilizar
+              y difundir mecanismos que degraden el rendimiento del juego, no
+              permitir finalizar la partida, entre otros.
+            </div>
           </div>
-          <div className="relative w-1/4 h-96 ">
+          {/* Imagen visible por defecto 2*/}
+          <div className="relative group w-1/4 h-96 ">
             <img
               src={convi}
               alt=""
@@ -108,8 +130,17 @@ function Home() {
             <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
               Convivencia{" "}
             </p>
+            {/* Imagen que aparece al hacer hover 2*/}
+            <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-xl font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height">
+              Estas acciones están estrictamente prohibidas: Insultos o lenguaje
+              ofensivo, Acoso, Spam o flood en el chat(No envíar mensajes
+              repetitivos o innecesarios),Trolleo, Robos o destrucción de
+              construcciones. Respeta las propiedades y creaciones de los demás
+              jugadores.
+            </div>
           </div>
-          <div className="relative w-1/4 h-96 ">
+          {/* Imagen visible por defecto 3*/}
+          <div className="relative group w-1/4 h-96 ">
             <img
               src={hack}
               alt=""
@@ -118,6 +149,16 @@ function Home() {
             <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
               Hacking{" "}
             </p>
+            {/* Imagen que aparece al hacer hover 3*/}
+            <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-xl font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height">
+              Queda totalmente prohibido el uso de hacks, como: X-Ray: Usar mods
+              o paquetes de texturas para localizar minerales o cofres ocultos.
+              Kill Aura/Auto Aim: Utilizar hacks que automaticen ataques o
+              aumenten el alcance de combate. Fly Hack: Habilidades para volar
+              en modos no permitidos. Speed Hack: Incrementar la velocidad de
+              movimiento de forma antinatural. Auto Clickers: Automatizar
+              acciones como minería, combate o construcción.
+            </div>
           </div>
         </div>
       </div>

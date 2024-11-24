@@ -8,8 +8,11 @@ export default {
         arial:["arial"],
         futura:["futura-bold"],
         icon:["icon"],
+        height:["line-height"],
+        
       },
     },
   },
   plugins: [require("daisyui")],
+  
 };

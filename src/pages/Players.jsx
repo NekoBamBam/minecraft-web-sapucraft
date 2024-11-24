@@ -25,11 +25,12 @@ function Players() {
 
   return (
     <div className="w-full h-full flex justify-evenly items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75]">
-      <div className="w-1/6 h-2/3 ml-10 rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9]">
+      {/* Donacion */}
+      <div className="w-1/6 h-2/3 ml-10 rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9] ">
         <p className="text-2xl flex justify-center text-yellow-500 font-black">
           DONACIONE$
         </p>
-        <ul className="mt-10 list-disc ml-5 text-white">
+        <ul className="mt-10 list-disc ml-5 text-white  ">
           {data
             ? [...data] // Crea una copia para no mutar el original
                 .sort((a, b) => b.donation - a.donation)
@@ -44,8 +45,8 @@ function Players() {
         </ul>
       </div>
       {/* Swiper */}
-      <div className="flex flex-col justify-center items-center gap-24 w-full h-full">
-        <div className="w-1/2 h-12 bg-[#BFC0C0] rounded-md pagination">
+      <div className="flex flex-col justify-center items-center gap-32 w-full h-full ">
+        <div className="w-1/2 h-12 bg-[#BFC0C0] rounded-md pagination -ml-40">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={5}
@@ -64,17 +65,18 @@ function Players() {
                           logo: player.logo,
                           skin: player.skin,
                           alias: player.alias,
+                          info: player.info,
                         })
                       }
                     >
                       <div
-                        className="tooltip tooltip-top z-40"
+                        className="tooltip tooltip-right z-40 "
                         data-tip={player.id}
                       >
                         <img
                           src={player.logo}
                           alt={player.id}
-                          className="h-12 z-30 rounded-md"
+                          className="h-12 z-30 rounded-md "
                         />
                       </div>
                     </button>
@@ -82,17 +84,17 @@ function Players() {
                 );
               })
             ) : (
-              <p className="flex justify-center w-full">Players</p>
+              <p className="flex justify-center w-full ">Players</p>
             )}
           </Swiper>
-          <div className="custom-pagination  flex justify-center"></div>
+          <div className="custom-pagination  flex justify-center "></div>
         </div>
         {/* Swiper END */}
 
         {/* Players information */}
-        <div className="shadow-2xl drop-shadow-sm w-3/4 h-1/3 rounded-lg bg-gray-900">
+        <div className=" shadow-2xl drop-shadow-md shadow-fuchsia-500 w-3/4 h-1/3 rounded-lg bg-gray-900 border -ml-24">
           {currentPlayer ? (
-            <div className="flex h-full w-full justify-end pt-5">
+            <div className="flex h-full w-full justify-end pt-3 ">
               {/* Username */}
               <div className="text-6xl font-black font-icon text-white w-1/4 pl-5">
                 <p>{currentPlayer.id}</p>
@@ -100,11 +102,8 @@ function Players() {
               </div>
               <div className=" flex justify-center items-center ml-5 ">
                 {/* Player information */}
-                <p className="mb-0 w-1/2 ">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dolore, tempore nobis ipsam non neque exercitationem eveniet
-                  facilis ullam reiciendis eos, debitis mollitia culpa, maxime
-                  atque voluptates totam quasi possimus aperiam!
+                <p className="-mb-4 w-1/2 text-gray-200">
+                 {currentPlayer.info}
                 </p>
               </div>
               {/* Player skin image */}
