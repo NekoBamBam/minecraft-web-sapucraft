@@ -24,9 +24,9 @@ function Players() {
   }, []);
 
   return (
-    <div className="w-full h-full flex justify-evenly items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75]">
+    <div className="w-full h-full flex justify-evenly items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75] overflow-hidden">
       {/* Donacion */}
-      <div className="w-1/6 h-2/3 ml-10 rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9] ">
+      <div className="absolute left-5  w-1/6 h-2/3  rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9] overflow-y-scroll">
         <p className="text-2xl flex justify-center text-yellow-500 font-black">
           DONACIONE$
         </p>
@@ -46,7 +46,7 @@ function Players() {
       </div>
       {/* Swiper */}
       <div className="flex flex-col justify-center items-center gap-32 w-full h-full ">
-        <div className="w-1/2 h-12 bg-[#BFC0C0] rounded-md pagination -ml-40">
+        <div className="w-1/2 h-12 bg-[#BFC0C0] rounded-md pagination ml-40">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={5}
@@ -92,7 +92,7 @@ function Players() {
         {/* Swiper END */}
 
         {/* Players information */}
-        <div className=" shadow-2xl drop-shadow-md shadow-fuchsia-500 w-3/4 h-1/3 rounded-lg bg-gray-900 border -ml-24">
+        <div className=" shadow-2xl drop-shadow-md shadow-fuchsia-500 w-3/4 h-1/3 rounded-lg bg-gray-900 border ml-60">
           {currentPlayer ? (
             <div className="flex h-full w-full justify-end pt-3 ">
               {/* Username */}

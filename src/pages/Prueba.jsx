@@ -1,38 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 
-const PhotoGallery = () => {
-  const photos = [
-    { id: 1, url: "https://via.placeholder.com/150", title: "Foto 1" },
-    { id: 2, url: "https://via.placeholder.com/150", title: "Foto 2" },
-    { id: 3, url: "https://via.placeholder.com/150", title: "Foto 3" },
-    { id: 4, url: "https://via.placeholder.com/150", title: "Foto 4" },
-    { id: 5, url: "https://via.placeholder.com/150", title: "Foto 5" },
-    { id: 6, url: "https://via.placeholder.com/150", title: "Foto 6" },
-  ];
+const ImageWithDaisyUIModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
-        Galería de Fotos
-      </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-        {photos.map((photo) => (
-          <div key={photo.id} className="card bg-base-100 shadow-xl">
-            <figure>
-              <img src={photo.url} alt={photo.title} className="w-full h-48 object-cover" />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{photo.title}</h2>
-              <p>Descripción breve de la foto.</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Ver más</button>
-              </div>
+    <div className="flex items-center justify-center h-screen">
+      {/* Imagen Pequeña */}
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Thumbnail"
+        className="w-32 h-32 cursor-pointer rounded-md"
+        onClick={() => setIsOpen(true)}
+      />
+
+      {/* Modal DaisyUI */}
+      {isOpen && (
+        <div className="modal modal-open">
+          <div className="modal-box">
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Enlarged"
+              className="w-full h-auto rounded-md"
+            />
+            <div className="modal-action">
+              <button
+                className="btn"
+                onClick={() => setIsOpen(false)}
+              >
+                Cerrar
+              </button>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
 
-export default PhotoGallery;
+export default ImageWithDaisyUIModal;
+
+
+
