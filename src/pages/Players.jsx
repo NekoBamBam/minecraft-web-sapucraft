@@ -25,7 +25,7 @@ function Players() {
 
   return (
     <div className="w-full h-full flex justify-evenly items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75]">
-      <div className="w-1/6 h-2/3 ml-10 rounded-lg bg-[#2D3142]">
+      <div className="rounded-lg bg-[#2D3142] border flex">
         <p className="text-2xl flex justify-center">Donaciones</p>
         <ul className="mt-10 list-disc ml-5">
           {data
@@ -41,7 +41,7 @@ function Players() {
       </div>
       {/* Swiper */}
       <div className="flex flex-col justify-center items-center gap-24 w-full h-full">
-        <div className="w-1/3 h-12 bg-[#BFC0C0] rounded-md pagination">
+        <div className="w-1/3 h-14 bg-[#BFC0C0] rounded-md pagination">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={5}
@@ -61,15 +61,13 @@ function Players() {
                           skin: player.skin,
                         })
                       }
+                      className="m-1"
                     >
-                      <div
-                        className="tooltip tooltip-right z-40"
-                        data-tip={player.id}
-                      >
+                      <div className="">
                         <img
                           src={player.logo}
                           alt={player.id}
-                          className="h-12 z-30 rounded-md"
+                          className="h-12 rounded-md"
                         />
                       </div>
                     </button>
@@ -77,15 +75,16 @@ function Players() {
                 );
               })
             ) : (
-              <p className="flex justify-center w-full">A</p>
+              <p className="flex justify-center w-full text-black mt-3">
+                Cargando
+              </p>
             )}
           </Swiper>
           <div className="custom-pagination  flex justify-center"></div>
         </div>
         {/* Swiper END */}
-
         {/* Players information */}
-        <div className="shadow-2xl drop-shadow-sm w-11/12 h-1/3 rounded-lg bg-[#2D3142]">
+        <div className="shadow-2xl drop-shadow-sm w-2/3 h-1/3 rounded-lg bg-[#2D3142]">
           {currentPlayer ? (
             <div className="flex h-full w-full justify-end pt-5">
               {/* Username */}
