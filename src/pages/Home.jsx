@@ -10,7 +10,7 @@ function Home() {
         <div
           className="absolute inset-0 h-full"
           style={{
-            backgroundImage: `url(${HeroImg})`,
+            backgroundImage: `url($})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             filter: "blur(1px)",
