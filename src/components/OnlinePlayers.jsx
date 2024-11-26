@@ -20,7 +20,7 @@ function OnlinePlayers() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center relative gap-2">
+    <div className="flex justify-center items-center relative gap-2 text-white">
       <div className="flex gap-2">
         <p>Jugadores en linea</p>
         <p>{status ? status.length : 0}/22</p>
@@ -35,11 +35,13 @@ function OnlinePlayers() {
         <div>
           {hoverStatus ? (
             <div className="absolute top-0 left-80 bg-neutral-900 border border-gray-300 rounded p-2">
-              {status
-                ? status.map((player, index) => {
-                    return <p key={index}>{player.name}</p>;
-                  })
-                : false}
+              {status > 0 ? (
+                status.map((player, index) => {
+                  return <p key={index}>{player.name}</p>;
+                })
+              ) : (
+                <p>No hay nadie</p>
+              )}
             </div>
           ) : (
             false

@@ -4,7 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        minecraft:["Minecraft", "sans-serif"]
+        minecraft: ["Minecraft", "sans-serif"],
+        arial: ["arial"],
+        futura: ["futura-bold"],
+        icon: ["icon"],
+        height: ["line-height"],
       },
     },
   },

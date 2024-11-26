@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./firebase/config.js";
+import "./firebase/config.js";
 import Home from "./pages/Home";
 import Players from "./pages/Players";
 import Layout from "./layouts/Layout";

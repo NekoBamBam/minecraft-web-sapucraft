@@ -55,7 +55,7 @@ function Navbar() {
           isOpen ? "block" : "hidden"
         }    lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30 bg-gray-900 bg-opacity-40`}
       >
-        <div className="absolute inset-0 bg-[#]"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <ul className="flex flex-col space-y-4 items-center">
           {links.map(({ to, name }, index) => {
             return (
