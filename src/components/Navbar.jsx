@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/icono1.png";
-import NavbarImg from "../assets/NavbarImg.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +28,7 @@ function Navbar() {
       <div className="container m-10 flex justify-between items-center lg:mx-auto ">
         <div>
           <Link to="/">
-            <img src={logo} alt="" className="h-20" />
+            <img src={logo} alt="" className="h-16" />
           </Link>
         </div>
         {/* Burger */}
@@ -54,15 +53,15 @@ function Navbar() {
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        }  border border-[#E0D2C3] bg-black bg-opacity-45 lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30`}
+        }    lg:w-1/5 w-full h-screen absolute right-0 top-0 pt-52 z-30 bg-gray-900 bg-opacity-40`}
       >
-        <div  className="absolute inset-0 bg-[#]"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         <ul className="flex flex-col space-y-4 items-center">
           {links.map(({ to, name }, index) => {
             return (
               <li
                 key={index}
-                className="relative hover:text-[#E46F18] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
+                className="relative hover:text-[#57CB02] hover:text-xl hover:before:content-['•'] hover:before:mr-1 w-full justify-center flex"
               >
                 <Link to={to} onClick={() => setIsOpen(false)}>
                   {name}
