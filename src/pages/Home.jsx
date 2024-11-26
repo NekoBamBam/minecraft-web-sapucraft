@@ -2,6 +2,8 @@ import HeroImg from "../assets/HeroImg.jpeg";
 import Footer from "../components/Footer";
 import fondoblock from "../assets/block-texture.jpg";
 import logo from "../assets/icono2.png";
+import OnlinePlayers from "../components/OnlinePlayers";
+
 
 function Home() {
   return (
@@ -30,7 +32,7 @@ function Home() {
               Ven y adentrate en la emocionante aventura al son de la guitarra
               payando y el sapucay de un gaucho de fondo
             </p>
-            <span>Jugadores en linea: 0</span>
+              <OnlinePlayers/>
             {/* Modal message */}
             <div className="mt-10">
               {/* Open the modal using document.getElementById('ID').showModal() method */}
