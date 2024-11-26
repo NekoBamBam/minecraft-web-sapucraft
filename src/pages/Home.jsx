@@ -31,8 +31,8 @@ function Home() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center ">
           {/* Logo */}
-          <div className="max-w-md">
-            <div className="text-[#05AF9E]  text-2xl">
+          <div className="max-w-md ">
+            <div className="text-[#05AF9E]  text-2xl ">
               <img src={logo} alt="" />
             </div>
             {/* Description */}

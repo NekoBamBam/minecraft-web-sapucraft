@@ -1,6 +1,7 @@
 import React from "react";
 import rancio from "../assets/rancioarmy.png";
 import fondobe from "../assets/images.jpeg";
+import obs from "../assets/obsidi.png"
 
 const links = [
   {
@@ -56,8 +57,8 @@ const links = [
 const Footer = () => {
   return (
     <footer
-      className="footer bg-neutral text-neutral-content justify-between"
-      style={{ backgroundImage: `url(${fondobe})` }}
+      className="footer bg-neutral text-neutral-content justify-between "
+      style={{ backgroundImage: `url(${obs})`, backgroundSize:"100%",backgroundRepeat:"false", }}
     >
       <aside className="p-10">
         <img className="h-24" src={rancio} alt="" />
