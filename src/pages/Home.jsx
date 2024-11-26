@@ -4,16 +4,33 @@ import convi from "../assets/convi.jpg";
 import logo from "../assets/icono2.png";
 import modo from "../assets/modo.jpeg";
 import hack from "../assets/hack.jpg";
-
-function copiarUrl() {
-  let url = document.getElementById("url");
-  let button = document.getElementById("ButonCopiar");
-  navigator.clipboard.writeText(url.textContent);
-  button.textContent = "copiado😎";
-}
 import OnlinePlayers from "../components/OnlinePlayers";
 
 function Home() {
+  function copiarUrl() {
+    let url = document.getElementById("url");
+    let button = document.getElementById("ButonCopiar");
+    navigator.clipboard.writeText(url.textContent);
+    button.textContent = "copiado😎";
+  }
+
+  const rules = [
+    {
+      image: modo,
+      type: "Modo de juego",
+      rule: "No arruinar la experiencia de juego del usuario. No está permitido realizar acciones a conciencia que arruinen laexperiencia de juego de otros usuarios de cualquier forma. Esto incluye utilizar y difundir mecanismos que degraden el rendimiento del juego, no permitir finalizar la partida, entre otros",
+    },
+    {
+      image: convi,
+      type: "Convivencia",
+      rule: "Estas acciones están estrictamente prohibidas: Insultos o lenguaje ofensivo, Acoso, Spam o flood en el chat(No envíar mensajes repetitivos o innecesarios),Trolleo, Robos o destrucción de construcciones. Respeta las propiedades y creaciones de los demás jugadores.",
+    },
+    {
+      image: hack,
+      type: "Hacking",
+      rule: "Queda totalmente prohibido el uso de hacks, como: X-Ray: Usar mods o paquetes de texturas para localizar minerales o cofres ocultos. Kill Aura/Auto Aim: Utilizar hacks que automaticen ataques o aumenten el alcance de combate. Fly Hack: Habilidades para volar en modos no permitidos. Speed Hack: Incrementar la velocidad de movimiento de forma antinatural. Auto Clickers: Automatizar acciones como minería, combate o construcción.",
+    },
+  ];
   return (
     <div>
       {/* Hero */}
@@ -89,79 +106,41 @@ function Home() {
         </div>
       </div>
       {/* RULES */}
-      <div className="h-screen bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] border border-transparent">
-        <div className="flex justify-start gap-4 mt-16  font-arial font-extrabold">
-          <p className="text-8xl text-white">REGLAS</p>
-          <p className="text-xs">
-            Bienvenidos a SapuCraft. A continuación, encontrarás una descripción
-            detallada de las reglas y directrices que hemos establecido para
-            garantizar una experiencia segura, respetuosa y agradable para todos
-            nuestros jugadores. Estas normas están diseñadas para fomentar un
-            entorno en el que todos puedan interactuar de manera positiva y
-            acceder a nuestros contenidos de forma clara y ordenada. Te
-            invitamos a leerlas atentamente antes de continuar navegando por
-            nuestro sitio y servidor.
-          </p>
+      <div className="h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] flex flex-col justify-center">
+        <div className="flex items-center font-arial font-extrabold ml-10 mr-10 h-1/3 ">
+          <div className="border-b flex items-center gap-4">
+            <p className="text-8xl text-white">REGLAS</p>
+            <p className="text-xs ">
+              Bienvenidos a SapuCraft. A continuación, encontrarás una
+              descripción detallada de las reglas y directrices que hemos
+              establecido para garantizar una experiencia segura, respetuosa y
+              agradable para todos nuestros jugadores. Estas normas están
+              diseñadas para fomentar un entorno en el que todos puedan
+              interactuar de manera positiva y acceder a nuestros contenidos de
+              forma clara y ordenada. Te invitamos a leerlas atentamente antes
+              de continuar navegando por nuestro sitio y servidor.
+            </p>
+          </div>
         </div>
-        <div className="flex place-content-between p-10 gap-24 ">
-          <div className="relative group w-1/4 h-96">
-            {/* Imagen visible por defecto 1*/}
-            <img
-              src={modo}
-              alt="Imagen inicial"
-              className=" rounded-md w-full h-full object-cover"
-            />
-            <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
-              Modo de juego{" "}
-            </p>
-            {/* Imagen que aparece al hacer hover 1*/}
-            <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-xl font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height">
-              No arruinar la experiencia de juego del usuario. No está permitido
-              realizar acciones a conciencia que arruinen la experiencia de
-              juego de otros usuarios de cualquier forma. Esto incluye utilizar
-              y difundir mecanismos que degraden el rendimiento del juego, no
-              permitir finalizar la partida, entre otros.
-            </div>
-          </div>
-          {/* Imagen visible por defecto 2*/}
-          <div className="relative group w-1/4 h-96 ">
-            <img
-              src={convi}
-              alt=""
-              className="rounded-md w-full h-full object-cover"
-            />
-            <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
-              Convivencia{" "}
-            </p>
-            {/* Imagen que aparece al hacer hover 2*/}
-            <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-xl font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height">
-              Estas acciones están estrictamente prohibidas: Insultos o lenguaje
-              ofensivo, Acoso, Spam o flood en el chat(No envíar mensajes
-              repetitivos o innecesarios),Trolleo, Robos o destrucción de
-              construcciones. Respeta las propiedades y creaciones de los demás
-              jugadores.
-            </div>
-          </div>
-          {/* Imagen visible por defecto 3*/}
-          <div className="relative group w-1/4 h-96 ">
-            <img
-              src={hack}
-              alt=""
-              className="rounded-md w-full h-full object-cover"
-            />
-            <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
-              Hacking{" "}
-            </p>
-            {/* Imagen que aparece al hacer hover 3*/}
-            <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-xl font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height">
-              Queda totalmente prohibido el uso de hacks, como: X-Ray: Usar mods
-              o paquetes de texturas para localizar minerales o cofres ocultos.
-              Kill Aura/Auto Aim: Utilizar hacks que automaticen ataques o
-              aumenten el alcance de combate. Fly Hack: Habilidades para volar
-              en modos no permitidos. Speed Hack: Incrementar la velocidad de
-              movimiento de forma antinatural. Auto Clickers: Automatizar
-              acciones como minería, combate o construcción.
-            </div>
+        <div className="h-1/2 ">
+          <div className="flex justify-evenly">
+            {rules.map(({ image, type, rule }, index) => {
+              return (
+                <div key={index} className="relative group w-1/4 h-96">
+                  <img
+                    src={image}
+                    alt=""
+                    className="rounded-md w-full h-full object-cover"
+                  />
+                  <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
+                    {type}
+                  </p>
+                  <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-lg font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height p-5">
+                    <p>{rule}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
