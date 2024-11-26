@@ -24,7 +24,7 @@ function Navbar() {
     },
   ];
   return (
-    <nav className="h-16 text-[#E0D2C3] flex items-center backdrop-blur-2xl shadow-sm bg-opacity-5 bg-gray-300">
+    <nav className="h-16 text-[#E0D2C3] flex items-center">
       <div className="container m-10 flex justify-between items-center lg:mx-auto ">
         <div>
           <Link to="/">

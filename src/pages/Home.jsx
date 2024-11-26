@@ -2,7 +2,7 @@ import HeroImg from "../assets/HeroImg.jpeg";
 import Footer from "../components/Footer";
 import convi from "../assets/convi.jpg";
 import logo from "../assets/icono2.png";
-import modo from "../assets/modo.jpeg";
+import modo from "../assets/modo.png";
 import hack from "../assets/hack.jpg";
 import OnlinePlayers from "../components/OnlinePlayers";
 
@@ -106,8 +106,8 @@ function Home() {
         </div>
       </div>
       {/* RULES */}
-      <div className="h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] flex flex-col justify-center">
-        <div className="flex items-center font-arial font-extrabold ml-10 mr-10 h-1/3 ">
+      <div className="h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] flex flex-col justfiy-start items-center">
+        <div className="flex items-center font-arial font-extrabold ml-10 mr-10 h-1/3">
           <div className="border-b flex items-center gap-4">
             <p className="text-8xl text-white">REGLAS</p>
             <p className="text-xs ">
@@ -122,25 +122,27 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="h-1/2 ">
-          <div className="flex justify-evenly">
-            {rules.map(({ image, type, rule }, index) => {
-              return (
-                <div key={index} className="relative group w-1/4 h-96">
-                  <img
-                    src={image}
-                    alt=""
-                    className="rounded-md w-full h-full object-cover"
-                  />
-                  <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
-                    {type}
-                  </p>
-                  <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-lg font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height p-5">
-                    <p>{rule}</p>
+        <div className="flex h-1/2 ">
+          <div className="place-content-center">
+            <div className="flex justify-evenly ">
+              {rules.map(({ image, type, rule }, index) => {
+                return (
+                  <div key={index} className="relative group w-1/4 ">
+                    <img
+                      src={image}
+                      alt=""
+                      className="rounded-md w-full h-full object-cover"
+                    />
+                    <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
+                      {type}
+                    </p>
+                    <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-lg font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height p-5">
+                      <p>{rule}</p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

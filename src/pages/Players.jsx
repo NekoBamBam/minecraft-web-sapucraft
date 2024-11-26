@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import Loading from "../components/Loading.Jsx";
 
 function Players() {
   const [data, setData] = useState(undefined);
@@ -84,7 +85,9 @@ function Players() {
                 );
               })
             ) : (
-              <p className="flex justify-center w-full ">Players</p>
+              <p className="flex justify-center w-full ">
+                <Loading />
+              </p>
             )}
           </Swiper>
           <div className="custom-pagination  flex justify-center "></div>
@@ -98,12 +101,14 @@ function Players() {
               {/* Username */}
               <div className="text-6xl font-black font-icon text-white w-96 pl-5">
                 <p>{currentPlayer.id}</p>
-                <p className="text-2xl text-green-500">alias: {currentPlayer.alias} </p>
+                <p className="text-2xl text-green-500">
+                  alias: {currentPlayer.alias}{" "}
+                </p>
               </div>
               <div className=" flex justify-center items-center ml-5 ">
                 {/* Player information */}
                 <p className="-mb-6  w-72 text-xl text-gray-200 ">
-                 {currentPlayer.info}
+                  {currentPlayer.info}
                 </p>
               </div>
               {/* Player skin image */}
