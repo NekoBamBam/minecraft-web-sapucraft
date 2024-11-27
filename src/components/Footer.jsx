@@ -56,7 +56,7 @@ const links = [
 const Footer = () => {
   return (
     <footer
-      className="footer bg-neutral text-neutral-content justify-between"
+      className="footer bg-neutral text-neutral-content justify-between flex flex-col-reverse lg:flex-row"
       style={{ backgroundImage: `url(${fondobe})` }}
     >
       <aside className="p-10">

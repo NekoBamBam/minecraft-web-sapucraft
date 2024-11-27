@@ -106,11 +106,13 @@ function Home() {
         </div>
       </div>
       {/* RULES */}
-      <div className="h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] flex flex-col justfiy-start items-center">
-        <div className="flex items-center font-arial font-extrabold ml-10 mr-10 h-1/3">
-          <div className="border-b flex items-center gap-4">
-            <p className="text-8xl text-white">REGLAS</p>
-            <p className="text-xs ">
+      <div className="h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] lg:flex flex-col justfiy-start items-center">
+        <div className="flex items-center font-arial font-extrabold lg:ml-10 lg:mr-10 h-1/3">
+          <div className="border-b lg:flex items-center gap-4 justfiy-center">
+            <p className="text-6xl lg:text-8xl text-white flex justify-center mb-10 lg:mb-0">
+              REGLAS
+            </p>
+            <p className="lg:text-xs mb-10 lg:mb-0 ml-2 mr-2 lg:ml-0 lg:mr-0">
               Bienvenidos a SapuCraft. A continuación, encontrarás una
               descripción detallada de las reglas y directrices que hemos
               establecido para garantizar una experiencia segura, respetuosa y
@@ -124,20 +126,26 @@ function Home() {
         </div>
         <div className="flex h-1/2 ">
           <div className="place-content-center">
-            <div className="flex justify-evenly ">
+            <div className="flex justify-evenly flex-col lg:flex-row">
+              {/* Mapeo de las reglas, sus fotos y descripciones */}
               {rules.map(({ image, type, rule }, index) => {
                 return (
-                  <div key={index} className="relative group w-1/4 ">
+                  <div
+                    key={index}
+                    className="relative group lg:w-1/4 mr-5 ml-5 lg:mr-0 lg:ml-0"
+                  >
                     <img
                       src={image}
-                      alt=""
-                      className="rounded-md w-full h-full object-cover"
+                      alt={type}
+                      className="rounded-md lg:w-full lg:h-full object-cover"
                     />
-                    <p className="absolute inset-0 flex items-end justify-center text-white text-xl font-bold">
+                    <p className="absolute inset-0 flex items-center lg:items-end justify-center text-white lg:text-xl font-bold text-2xl">
                       {type}
                     </p>
-                    <div className="rounded-md absolute inset-0 flex items-center justify-center bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-lg font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height p-5">
-                      <p>{rule}</p>
+                    <div className="rounded-md lg:absolute lg:inset-0 lg:flex items-center justify-center h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] text-white text-lg font-bold transition-opacity duration-300 opacity-0 group-hover:opacity-100 font-height lg:p-5 mb-5 lg:mb-0">
+                      <p className="bg-black bg-opacity-70 lg:bg-inherit">
+                        {rule}
+                      </p>
                     </div>
                   </div>
                 );
