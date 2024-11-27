@@ -107,7 +107,7 @@ function Home() {
       </div>
       {/* RULES */}
       <div className="h-full bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] lg:flex flex-col justfiy-start items-center">
-        <div className="flex items-center font-arial font-extrabold lg:ml-10 lg:mr-10 h-1/3">
+        <div className="flex items-center font-arial font-extrabold lg:ml-10 lg:mr-10 h-1/4">
           <div className="border-b lg:flex items-center gap-4 justfiy-center">
             <p className="text-6xl lg:text-8xl text-white flex justify-center mb-10 lg:mb-0">
               REGLAS
