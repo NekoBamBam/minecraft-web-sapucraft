@@ -46,10 +46,10 @@ function Memories() {
         </div>
         {image ? (
           <div
-            className="absolute flex justify-center items-center bg-black bg-opacity-90 h-full w-full top-0"
+            className="absolute flex justify-center items-center bg-black bg-opacity-90 h-full w-full  top-0"
             onClick={() => setImage(undefined)}
           >
-            <img src={image} alt="" className="h-96" />
+            <img src={image} alt="" className="lg:h-2/3" />
           </div>
         ) : (
           false

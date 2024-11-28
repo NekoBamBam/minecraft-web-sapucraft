@@ -27,7 +27,7 @@ function Players() {
   return (
     <div className="w-full h-full flex lg:justify-start justify-center items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75] overflow-hidden">
       {/* Donacion */}
-      <div className="absolute top-12 lg:ml-10 lg:w-1/6 w-4/3 h-1/3 lg:h-auto rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9] overflow-y-scroll">
+      <div className="absolute top-20 lg:ml-10 lg:w-1/6 w-4/3 h-1/3 lg:h-auto rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9] overflow-y-scroll">
         <p className="text-2xl flex justify-center text-yellow-500 font-black">
           DONACIONE$
         </p>
@@ -112,8 +112,8 @@ function Players() {
                 </p>
               </div>
               {/* Player skin image */}
-              <div className="flex justify-center items-center w-full lg:w-80">
-                <img src={currentPlayer.skin} alt="" className="h-40 lg:h-96" />
+              <div className="flex justify-center items-center w-full lg:w-80 md:w-32">
+                <img src={currentPlayer.skin} alt="" className="h-40 lg:h-96 md:h-64" />
               </div>
             </div>
           ) : (

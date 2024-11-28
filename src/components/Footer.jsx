@@ -1,6 +1,6 @@
 import React from "react";
 import rancio from "../assets/rancioarmy.png";
-import fondobe from "../assets/images.jpeg";
+import fondobe from "../assets/obsidian.webp";
 
 const links = [
   {
