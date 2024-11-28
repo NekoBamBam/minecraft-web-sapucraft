@@ -48,8 +48,8 @@ function Home() {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center ">
           {/* Logo */}
-          <div className="max-w-md">
-            <div className="text-[#05AF9E]  text-2xl">
+          <div className="max-w-md ">
+            <div className="text-[#05AF9E]  text-2xl ">
               <img src={logo} alt="" />
             </div>
             {/* Description */}
@@ -60,14 +60,14 @@ function Home() {
             <OnlinePlayers />
             {/* Modal message */}
             <div className="mt-10 ">
-              {/*Boton colaboración*/}
+              {/*Botón colaboración*/}
               <button
                 className="btn bg-orange-900 text-white font-arial "
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
                 }
               >
-                Querés colaborar?
+                ¿Querés colaborar?
               </button>
               <dialog id="my_modal_1" className="modal ">
                 <div className="modal-box bg-black">
@@ -76,7 +76,7 @@ function Home() {
                   </h3>
 
                   <p className="py-4 font-arial text-green-500">
-                    Alias para la causa!
+                    CVU para la causa!
                   </p>
                   <button id="ButonCopiar" onClick={copiarUrl}>
                     <svg

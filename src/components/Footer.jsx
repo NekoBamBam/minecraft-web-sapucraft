@@ -56,7 +56,7 @@ const links = [
 const Footer = () => {
   return (
     <footer
-      className="footer bg-neutral text-neutral-content justify-between flex flex-col-reverse lg:flex-row"
+      className="footer bg-neutral text-neutral-content items-center lg:items-start lg:justify-between flex flex-col-reverse lg:flex-row"
       style={{ backgroundImage: `url(${fondobe})` }}
     >
       <aside className="p-10">
@@ -67,13 +67,27 @@ const Footer = () => {
           Providing famous quotes since 2017
         </p>
       </aside>
+      <div className="flex flex-col gap-3 relative top-10 items-center">
+        <p className="text-xl font-bold text-green-500 underline">INFORMATION</p>
+        <p className="text-base">¿Te interesa participar en el servidor?</p>
+        <p className="text-base">!Llená esta breve encuesta!</p>
+        <a
+          className="link link-secondary text-base"
+          target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfBqHIFA6gEVGP8If1QeelM5_H9C39GBZ3VIc2ZbQrOlHNeNg/viewform?usp=sf_link"
+        >
+          Click aquí
+        </a>
+      </div>
       <nav className="p-10">
         <h6 className="footer-title">Colabs</h6>
         {links.map(({ name, link, svg }, index) => {
           return (
             <ul key={index} className="text-xl gap-4">
               <li className="flex flex-row gap-4 items-center link">
-                <a href={link} target="_blank">{name}</a >
+                <a href={link} target="_blank">
+                  {name}
+                </a>
                 <a href={link} target="_blank">
                   {svg}
                 </a>

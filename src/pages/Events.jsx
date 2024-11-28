@@ -21,12 +21,13 @@ function Events() {
             return (
               <div
               key={index}
-              className="flex flex-col justify-center items-center gap-4 w-3/4 h-1/3 rounded-lg bg-neutral-900 border-4 border-white"
+              className="flex flex-col justify-center items-center gap-6 w-3/4 h-1/3 rounded-lg bg-black shadow-2xl drop-shadow-md shadow-fuchsia-500"
               >
-                  <p className="text-6xl text-red-800 font-arial font-extrabold ">{event.name}</p>
+                  <p className="text-6xl text-white font-arial font-extrabold ">{event.name}</p>
                   <img src={event.image} alt="" className="h-96 " />
-                  <p>{event.date}</p>
-                  <p className="w-1/2 ">{event.description}</p>
+                  <p className="text-green-500">{event.date}</p>
+                  <p className="text-yellow-500">{event.lugar}</p>
+                  <p className="w-1/2 text-slate-200">{event.description}</p>
                 </div>
               );
             })
