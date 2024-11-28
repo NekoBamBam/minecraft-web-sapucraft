@@ -39,7 +39,7 @@ function Memories() {
         <p className="text-white text-xl  font-mono underline absolute bottom-16 left-10">
           2024|+20 Players|Rancio Army Inc.
         </p>
-      </div >
+      </div>
 
       <div className="w-full h-full  flex flex-col items-center gap-10 justify-start min-h-screen  pt-32 ">
         <div className="flex items-center gap-4">
@@ -54,30 +54,30 @@ function Memories() {
               La ronda de la amistad
             </p>
             <p className=" h-40 w-96 text-white flex items-center justify-center relative top-5 text-lg font-futura">
-              En la sombra del algarrobo, un fogón de luz prendía, y en su ronda, 
-              unos amigos compartían alegría. Amistad, dijo el más viejo, es el
-              lazo mas sincero, no se compra con riquezas ni se paga con dinero.
-              Otro gaucho respondió, con guitarra y su dulzor: Es el yugo en los
-              pesares y el abrazo en el dolor. Si el camino es de espinas, la
-              amistad es el sosten, que el amigo verdadero te levanta siempre
-              bien.
+              En la sombra del algarrobo, un fogón de luz prendía, y en su
+              ronda, unos amigos compartían alegría. Amistad, dijo el más viejo,
+              es el lazo mas sincero, no se compra con riquezas ni se paga con
+              dinero. Otro gaucho respondió, con guitarra y su dulzor: Es el
+              yugo en los pesares y el abrazo en el dolor. Si el camino es de
+              espinas, la amistad es el sosten, que el amigo verdadero te
+              levanta siempre bien.
             </p>
           </div>
         </div>
         <div className="mt-20  flex flex-col items-center">
-          <p className="text-2xl text-white font-arial">GALERIA</p>
+          <p className="text-2xl text-white font-arial ">GALERIA</p>
           {/*Flechita*/}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="64"
             height="64"
             fill="currentColor"
-            class="bi bi-arrow-down  text-white "
+            class="bi bi-chevron-down text-white mt-7"
             viewBox="0 0 16 16"
           >
             <path
               fill-rule="evenodd"
-              d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"
             />
           </svg>
         </div>
