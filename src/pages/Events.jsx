@@ -1,6 +1,5 @@
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import event from "../assets/event.jpeg"
 
 function Events() {
   const [data, setData] = useState(undefined);
@@ -23,11 +22,11 @@ function Events() {
               key={index}
               className="flex flex-col justify-center items-center gap-6 w-3/4 h-1/3 rounded-lg bg-black shadow-2xl drop-shadow-md shadow-fuchsia-500"
               >
-                  <p className="text-6xl text-white font-arial font-extrabold ">{event.name}</p>
-                  <img src={event.image} alt="" className="h-96 " />
+                  <p className="lg:text-6xl text-white font-arial font-extrabold text-2xl">{event.name}</p>
+                  <img src={event.image} alt="" className="lg:h-96 " />
                   <p className="text-green-500">{event.date}</p>
                   <p className="text-yellow-500">{event.lugar}</p>
-                  <p className="w-1/2 text-slate-200">{event.description}</p>
+                  <p className="lg:w-1/2 text-slate-200 m-10 lg:m-0">{event.description}</p>
                 </div>
               );
             })
