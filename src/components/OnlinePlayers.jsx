@@ -35,7 +35,7 @@ function OnlinePlayers() {
         <div>
           {hoverStatus ? (
             <div className="absolute top-0 left-80 bg-neutral-900 border border-gray-300 rounded p-2">
-              {status > 0 ? (
+              {status.length > 0 ? (
                 status.map((player, index) => {
                   return <p key={index}>{player.name}</p>;
                 })

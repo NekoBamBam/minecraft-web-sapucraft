@@ -43,14 +43,14 @@ function Home() {
             <OnlinePlayers />
             {/* Modal message */}
             <div className="mt-10 ">
-              {/*Boton colaboración*/}
+              {/*Botón colaboración*/}
               <button
                 className="btn bg-orange-900 text-white font-arial "
                 onClick={() =>
                   document.getElementById("my_modal_1").showModal()
                 }
               >
-                Querés colaborar?
+                ¿Querés colaborar?
               </button>
               <dialog id="my_modal_1" className="modal ">
                 <div className="modal-box bg-black">
@@ -59,7 +59,7 @@ function Home() {
                   </h3>
 
                   <p className="py-4 font-arial text-green-500">
-                    Alias para la causa!
+                    CVU para la causa!
                   </p>
                   <button id="ButonCopiar" onClick={copiarUrl}>
                     <svg
@@ -89,10 +89,10 @@ function Home() {
         </div>
       </div>
       {/* RULES */}
-      <div className="h-screen bg-gradient-to-r from-[#011526A1] to-[#044D8CA1] border border-transparent">
-        <div className="flex justify-start gap-4 mt-16  font-arial font-extrabold">
-          <p className="text-8xl text-white">REGLAS</p>
-          <p className="text-xs">
+      <div className="h-4/5 bg-gradient-to-r from-[#011526A1] to-[#044D8CA1]  border border-transparent ">
+        <div className="flex justify-start gap-4 mt-16 font-arial font-extrabold ">
+          <p className="text-8xl text-white ">REGLAS</p>
+          <p className="text-sm">
             Bienvenidos a SapuCraft. A continuación, encontrarás una descripción
             detallada de las reglas y directrices que hemos establecido para
             garantizar una experiencia segura, respetuosa y agradable para todos

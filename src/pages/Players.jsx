@@ -26,8 +26,8 @@ function Players() {
   return (
     <div className="w-full h-full flex justify-evenly items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75] overflow-hidden">
       {/* Donacion */}
-      <div className="absolute left-5  w-1/6 h-2/3  rounded-lg bg-gradient-to-r from-[#EB07A1] to-[#EB68D9] overflow-y-scroll">
-        <p className="text-2xl flex justify-center text-yellow-500 font-black">
+      <div className="absolute left-5  w-1/6 h-2/3  rounded-lg shadow-2xl drop-shadow-md shadow-fuchsia-500 bg-gray-900 border overflow-y-scroll">
+        <p className="font-futura text-2xl flex justify-center text-yellow-500 font-black mt-3 underline">
           DONACIONE$
         </p>
         <ul className="mt-10 list-disc ml-5 text-white  ">
