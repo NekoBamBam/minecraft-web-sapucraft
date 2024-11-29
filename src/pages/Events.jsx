@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 function Events() {
   const [data, setData] = useState(undefined);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(undefined);
 
   useEffect(() => {
     const querydb = getFirestore();
@@ -12,28 +14,76 @@ function Events() {
     );
   }, []);
 
+  const openModal = (event) => {
+    setSelectedEvent(event); // Almacena el evento seleccionado
+    setIsModalOpen(true); // Abre el modal
+  };
+
+  const closeModal = () => {
+    setSelectedEvent(null);
+    setIsModalOpen(false); // Cierra el modal
+  };
+
   return (
-<div className="bg-gradient-to-r from-[#451669] to-[#470f1c]">
-    <div className="flex flex-col items-center justify-start min-h-screen pt-44 gap-12 ">
+    <div className="top-0 flex">
+      <div className="flex flex-col items-center justify-start min-h-screen gap-10">
         {data
           ? data.map((event, index) => {
-            return (
-              <div
-              key={index}
-              className="flex flex-col justify-center items-center gap-6 w-3/4 h-1/3 rounded-lg bg-black shadow-2xl drop-shadow-md shadow-fuchsia-500"
-              >
-                  <p className="lg:text-6xl text-white font-arial font-extrabold text-2xl">{event.name}</p>
-                  <img src={event.image} alt="" className="lg:h-96 " />
-                  <p className="text-green-500">{event.date}</p>
-                  <p className="text-yellow-500">{event.lugar}</p>
-                  <p className="lg:w-1/2 text-slate-200 m-10 lg:m-0">{event.description}</p>
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col justify-center items-center gap-6 w-full h-full top-0"
+                >
+                  <div className="relative w-full h-full ">
+                    <img
+                      src={event.image}
+                      alt=""
+                      className="lg:h-full lg:w-full border "
+                    />
+                    <button
+                      className="btn absolute bottom-10 right-80 bg-violet-900 text-white"
+                      onClick={() => openModal(event)}
+                    >
+                      Más información
+                    </button>
+                    <p className="absolute bottom-screen left-10 top-20 font-sans text-white text-6xl font-bold p-2 rounded-md">
+                      {event.name}
+                    </p>
+                  </div>
                 </div>
               );
             })
-            : false}
- 
-    </div>
+          : false}
+        {isModalOpen && (
+          <div className="fixed inset-0 flex justify-center items-center">
+            <div className="bg-neutral-900 p-6 rounded-lg shadow-lg max-w-md w-full">
+              <div className="flex flex-col gap-4">
+                <p className="text-xl font-bold mb-4 text-red-500">
+                  {selectedEvent?.name || "Nombre no disponible"}
+                  <p className="text-yellow-500 text-sm">
+                    Fecha: {selectedEvent?.date || "Fecha no disponible"}
+                  </p>
+                </p>
+                <p className="text-blue-500">
+                  Lugar: {selectedEvent?.lugar || "Lugar no disponible"}
+                </p>
+                <p>
+                  {selectedEvent?.description || "Descripción no disponible"}
+                </p>
+              </div>
+              <div className="flex justify-end mt-4">
+                <button
+                  className=""
+                  onClick={closeModal} // Cierra el modal
+                >
+                  Cerrar
+                </button>
+              </div>
             </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 

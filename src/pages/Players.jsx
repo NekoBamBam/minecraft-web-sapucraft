@@ -27,11 +27,11 @@ function Players() {
   return (
     <div className="w-full h-full flex lg:justify-start justify-center items-center bg-gradient-to-b from-[#2D3142] to-[#4F5D75] overflow-hidden">
       {/* Donacion */}
-      <div className="absolute top-14 lg:ml-10 lg:w-1/6 w-4/3 h-1/3 lg:h-auto rounded-lg overflow-y-scroll shadow-2xl drop-shadow-md shadow-fuchsia-500 bg-gray-900 border">
-        <p className="font-futura text-2xl flex justify-center text-yellow-500 font-black">
+      <div className="absolute top-14 lg:ml-10 lg:m-10 lg:w-1/6 w-4/3 h-1/3 lg:h-2/3  rounded-lg overflow-y-scroll shadow-2xl drop-shadow-md shadow-fuchsia-500 bg-gray-900 border">
+        <p className="font-futura text-2xl flex justify-center mt-4 underline text-yellow-500 font-black">
           DONACIONE$
         </p>
-        <ul className="mt-10 list-disc ml-5 text-white text-sm lg:text-base">
+        <ul className="mt-10 list-disc ml-5  text-white text-sm lg:text-base">
           {data
             ? [...data] // Crea una copia para no mutar el original
                 .sort((a, b) => b.donation - a.donation)
@@ -113,11 +113,7 @@ function Players() {
               </div>
               {/* Player skin image */}
               <div className="flex justify-center items-center w-full lg:w-80 md:w-32">
-                <img
-                  src={currentPlayer.skin}
-                  alt=""
-                  className="h-40 lg:h-96 md:h-64"
-                />
+                <img src={currentPlayer.skin} alt="" className="h-40 lg:h-80  md:h-64" />
               </div>
             </div>
           ) : (
