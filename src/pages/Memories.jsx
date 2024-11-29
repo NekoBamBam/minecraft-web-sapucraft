@@ -51,7 +51,7 @@ function Memories() {
       </div>
 
       <div className="w-full h-full flex flex-col items-center gap-10 justify-start min-h-screen lg:pt-32">
-        <div className="lg:flex items-center lg:gap-8 ml-56 border w-full ">
+        <div className="lg:flex items-center lg:gap-8 ml-56 border w-3/4 ">
           {/*img amistad*/}
           <img
             src={modo}
@@ -97,7 +97,7 @@ function Memories() {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col justify-evenly mb-8 w-full max-w-md px-4 "
+                    className="flex flex-col justify-evenly mb-8 w-full max-w-md px-4 items-center "
                   >
                     {memorie.image ? (
                       <ModalImage
@@ -105,12 +105,12 @@ function Memories() {
                         large={memorie.image}
                         hideDownload={false}
                         hideZoom={false}
-                        className="lg:w-full object-cover cursor-pointer lg:rounded-2xl rounded-md shadow-2xl drop-shadow-md shadow-red-700"
+                        className="lg:w-full object-cover cursor-pointer  lg:rounded-2xl rounded-md shadow-2xl drop-shadow-md shadow-red-700 "
                       />
                     ) : (
                       <p>La imagen no ha cargado correctamente</p>
                     )}
-                    <p className="mt-5 text-lg text-center text-white ">
+                    <p className="absolute bg-black bg-opacity-50 justify-center bg text-xl text-center   text-white ">
                       {memorie.description}
                     </p>
                   </div>

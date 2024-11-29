@@ -39,7 +39,9 @@ function Events() {
                       alt=""
                       className="lg:h-full lg:w-full border "
                     />
-                    <p className="absolute bottom-screen left-10 top-20 font-sans text-white text-6xl font-bold p-2 rounded-md" >
+                    <p className="absolute bottom-screen left-10 top-20 font-sans text-white text-6xl font-bold p-2 rounded-md" style={{
+    textShadow: "2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black",
+  }}>
                       {event.name}
                     </p>
                     {/* Open the modal using document.getElementById('ID').showModal() method */}
