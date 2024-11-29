@@ -44,7 +44,7 @@ function Memories() {
             alt=""
             className="absolute w-10 h-10 lg:h-20 lg:w-20 lg:bottom-10 lg:left-8 rounded-xl lg:top-72 top-40"
           />
-          <p className="text-white text-xl  font-mono underline absolute lg:bottom-16 lg:left-10 top-30 lg:top-screen ">
+          <p className="text-white text-xl font-mono underline absolute lg:bottom-16 lg:left-10 top-20 lg:top-auto">
             2024|+20 Players|Rancio Army Inc.
           </p>
         </div>
@@ -97,7 +97,7 @@ function Memories() {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col justify-evenly mb-8 w-full max-w-md px-4 "
+                    className="flex flex-col justify-evenly mb-8 w-full max-w-md px-4 items-center "
                   >
                     {memorie.image ? (
                       <ModalImage
@@ -105,12 +105,12 @@ function Memories() {
                         large={memorie.image}
                         hideDownload={false}
                         hideZoom={false}
-                        className="lg:w-full object-cover cursor-pointer lg:rounded-2xl rounded-md shadow-2xl drop-shadow-md shadow-red-700"
+                        className="lg:w-full object-cover cursor-pointer  lg:rounded-2xl rounded-md shadow-2xl drop-shadow-md shadow-red-700 "
                       />
                     ) : (
                       <p>La imagen no ha cargado correctamente</p>
                     )}
-                    <p className="mt-5 text-lg text-center text-white ">
+                    <p className="absolute bg-black bg-opacity-50 justify-center bg text-xl text-center   text-white ">
                       {memorie.description}
                     </p>
                   </div>

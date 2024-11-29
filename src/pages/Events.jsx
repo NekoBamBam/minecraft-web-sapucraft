@@ -40,15 +40,22 @@ function Events() {
                       alt=""
                       className="lg:h-full lg:w-full border "
                     />
+                    <p
+                      className="absolute bottom-screen left-10 top-20 font-sans text-white text-4xl lg:text-6xl font-bold p-2 rounded-md"
+                      style={{
+                        textShadow:
+                          "2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black",
+                      }}
+                    >
+                      {event.name}
+                    </p>
+                    {/* Open the modal using document.getElementById('ID').showModal() method */}
                     <button
-                      className="btn absolute bottom-10 right-80 bg-violet-900 text-white"
+                      className="btn absolute lg:bottom-10 lg:right-80 bg-violet-900 text-white mt-1 lg:mt-0"
                       onClick={() => openModal(event)}
                     >
                       Más información
                     </button>
-                    <p className="absolute bottom-screen left-10 top-20 font-sans text-white text-6xl font-bold p-2 rounded-md">
-                      {event.name}
-                    </p>
                   </div>
                 </div>
               );

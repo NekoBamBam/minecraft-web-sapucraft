@@ -30,6 +30,7 @@ function Home() {
       type: "Hacking",
       rule: "Queda totalmente prohibido el uso de hacks, como: X-Ray: Usar mods o paquetes de texturas para localizar minerales o cofres ocultos. Kill Aura/Auto Aim: Utilizar hacks que automaticen ataques o aumenten el alcance de combate. Fly Hack: Habilidades para volar en modos no permitidos. Speed Hack: Incrementar la velocidad de movimiento de forma antinatural. Auto Clickers: Automatizar acciones como minería, combate o construcción.",
     },
+    
   ];
   return (
     <div>
