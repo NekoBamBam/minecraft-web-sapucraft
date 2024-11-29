@@ -113,7 +113,11 @@ function Players() {
               </div>
               {/* Player skin image */}
               <div className="flex justify-center items-center w-full lg:w-80 md:w-32">
-                <img src={currentPlayer.skin} alt="" className="h-40 lg:h-96 md:h-64" />
+                <img
+                  src={currentPlayer.skin}
+                  alt=""
+                  className="h-40 lg:h-96 md:h-64"
+                />
               </div>
             </div>
           ) : (
