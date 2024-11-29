@@ -4,10 +4,11 @@ import event from "../assets/memo.png";
 import sapulogo from "../assets/sapulogo.png";
 import arg from "../assets/arg.webp";
 import modo from "../assets/juntos.jpeg";
+import ModalImage from "react-modal-image";
 
 function Memories() {
   const [data, setData] = useState(undefined);
-  const [image, setImage] = useState(undefined);
+  const [visibleImage, setVisibleImage] = useState(6);
 
   useEffect(() => {
     const querydb = getFirestore();
@@ -19,41 +20,49 @@ function Memories() {
     );
   }, []);
 
+  function loadMoreImage() {
+    setVisibleImage((prev) => prev + 6);
+  }
+
   return (
-    <div className="h-screen w-full flex flex-col  bg-cover overflow-auto relative bg-[#C34F1F] ">
+    <div className="h-screen w-full flex flex-col bg-cover overflow-auto relative bg-gradient-to-b from-[#C34F1F] to-orange-400 gap-40 lg:gap-0">
       <div className="h-full w-full">
-        {/*img fondo*/}
-        <img src={event} alt="" className="w-full h-auto" />
-        {/*Logo SapuCraft*/}
-        <img
-          src={sapulogo}
-          alt=""
-          className="absolute h-40 bottom-24 left-8 "
-        />
+        <div className="">
+          {/*img fondo*/}
+          <img src={event} alt="" className="w-full h-auto" />
+          {/*Logo SapuCraft*/}
+          <img
+            src={sapulogo}
+            alt=""
+            className="absolute lg:h-40 lg:bottom-24 lg:left-8 lg:ml-0"
+          />
+        </div>
         {/*Bandera Argentina*/}
-        <img
-          src={arg}
-          alt=""
-          className="absolute h-20 w-20 bottom-10 left-8 rounded-xl top-72"
-        />
-        <p className="text-white text-xl  font-mono underline absolute bottom-16 left-10">
-          2024|+20 Players|Rancio Army Inc.
-        </p>
+        <div className="ml-1 lg:ml-0">
+          <img
+            src={arg}
+            alt=""
+            className="absolute w-10 h-10 lg:h-20 lg:w-20 lg:bottom-10 lg:left-8 rounded-xl lg:top-72 top-40"
+          />
+          <p className="text-white text-xl  font-mono underline absolute lg:bottom-16 lg:left-10 top-30 lg:top-screen ">
+            2024|+20 Players|Rancio Army Inc.
+          </p>
+        </div>
       </div>
 
-      <div className="w-full h-full  flex flex-col items-center gap-10 justify-start min-h-screen  pt-32 ">
-        <div className="flex items-center gap-4">
+      <div className="w-full h-full flex flex-col items-center gap-10 justify-start min-h-screen lg:pt-32">
+        <div className="lg:flex items-center lg:gap-8 ml-56 border w-full ">
           {/*img amistad*/}
           <img
             src={modo}
             alt=""
-            className="rounded-2xl h-80 w-80 relative right-10"
+            className="rounded-2xl h-80 w-80 relative lg:right-10 lg:left-0 mb-5 lg:mb-0"
           />
-          <div className="flex flex-col gap-10 relative top-0">
-            <p className="text-2xl font-bold text-white text-center font-serif">
+          <div className="flex flex-col lg:gap-10 relative lg:top-0 gap-4">
+            <p className="text-2xl font-bold text-white text-start font-serif">
               La ronda de la amistad
             </p>
-            <p className=" h-40 w-96 text-white flex items-center justify-center relative top-5 text-lg font-futura">
+            <p className="lg:h-32 lg:w-2/3 w-full text-white flex items-center justify-center relative top-5 text-lg ">
               En la sombra del algarrobo, un fogón de luz prendía, y en su
               ronda, unos amigos compartían alegría. Amistad, dijo el más viejo,
               es el lazo mas sincero, no se compra con riquezas ni se paga con
@@ -72,7 +81,7 @@ function Memories() {
             width="64"
             height="64"
             fill="currentColor"
-            class="bi bi-chevron-down text-white mt-7"
+            class="bi bi-chevron-down text-white"
             viewBox="0 0 16 16"
           >
             <path
@@ -82,25 +91,26 @@ function Memories() {
           </svg>
         </div>
         {/*img memories*/}
-        <div className="grid grid-cols-3 justify-center gap-10 ">
+        <div className="lg:grid grid-cols-3 justify-center gap-10">
           {data
-            ? data.map((memorie, index) => {
+            ? data.slice(0, visibleImage).map((memorie, index) => {
                 return (
                   <div
                     key={index}
                     className="flex flex-col justify-evenly mb-8 w-full max-w-md px-4 "
                   >
                     {memorie.image ? (
-                      <img
-                        src={memorie.image}
-                        alt=""
-                        className="w-full cursor-pointer rounded-2xl"
-                        onClick={() => setImage(memorie.image)}
+                      <ModalImage
+                        small={memorie.image}
+                        large={memorie.image}
+                        hideDownload={false}
+                        hideZoom={false}
+                        className="lg:w-full object-cover cursor-pointer lg:rounded-2xl rounded-md shadow-2xl drop-shadow-md shadow-red-700"
                       />
                     ) : (
                       <p>La imagen no ha cargado correctamente</p>
                     )}
-                    <p className="mt-2 text-center text-white">
+                    <p className="mt-5 text-lg text-center text-white ">
                       {memorie.description}
                     </p>
                   </div>
@@ -108,17 +118,27 @@ function Memories() {
               })
             : false}
         </div>
-        {/*Agrandamiento de la img*/}
-        {image ? (
-          <div
-            className="absolute flex justify-center items-center bg-black bg-opacity-90 h-full w-full top-0"
-            onClick={() => setImage(undefined)}
-          >
-            <img src={image} alt="" className="h-96" />
-          </div>
-        ) : (
-          false
-        )}
+        {/* Botón "Ver más" */}
+        {data
+          ? visibleImage < data.length && (
+              <button
+                className="text-white flex flex-col items-center"
+                onClick={loadMoreImage}
+              >
+                Ver más...{" "}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-caret-down-fill "
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                </svg>
+              </button>
+            )
+          : false}
       </div>
     </div>
   );

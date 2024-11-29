@@ -1,62 +1,86 @@
-import React, { useState } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
-const ImageGallery = ({ images }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null); // Imagen seleccionada
+function Events() {
+  const [data, setData] = useState(undefined);
 
-  const openModal = (image) => {
-    setSelectedImage(image);
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-    setIsOpen(false);
-  };
   useEffect(() => {
     const querydb = getFirestore();
-    const queryCollection = collection(querydb, "memories");
+    const queryCollection = collection(querydb, "events");
     getDocs(queryCollection).then((res) =>
-      setData(
-        res.docs.map((memories) => ({ id: memories.id, ...memories.data() }))
-      )
+      setData(res.docs.map((events) => ({ id: events.id, ...events.data() })))
     );
   }, []);
 
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
-      {/* Galería de imágenes */}
-      {images.map((image, index) => (
-        <img
-          key={index}
-          src={image}
-          alt={`Imagen ${index + 1}`}
-          className="w-32 h-32 object-cover rounded-md cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => openModal(image)}
-        />
-      ))}
+    <div>
+      {/*  <img src={pelea} alt="" />
+      <p
+        className="text-8xl font-arial font-black text-white text-center bottom-32 relative"
+        style={{
+          textShadow:
+            "2px 2px 0 black, -2px 2px 0 black, 2px -2px 0 black, -2px -2px 0 black",
+        }}
+      >
+        EVENTOS
+      </p> */}
 
-      {/* Modal */}
-      {isOpen && selectedImage && (
-        <div className="modal modal-open fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="modal-box bg-white rounded-lg p-4 shadow-lg relative">
-            <button
-              className="absolute top-2 right-2 btn btn-sm btn-circle"
-              onClick={closeModal}
-            >
-              ✕
-            </button>
-            <img
-              src={selectedImage}
-              alt="Imagen ampliada"
-              className="w-full h-auto rounded-md"
-            />
-          </div>
-        </div>
-      )}
+      <div className="flex flex-col top-0 border items-center justify-start min-h-screen pt-4 gap-20 ">
+        {data
+          ? data.map((event, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col justify-center items-center gap-6 w-full h-full top-0"
+                >
+                  <div className="relative w-full h-full ">
+                    <img
+                      src={event.image}
+                      alt=""
+                      className="lg:h-full lg:w-full border "
+                    />
+                    <p className="absolute bottom-screen left-10 top-20 font-sans text-white text-6xl font-bold p-2 rounded-md" >
+                      {event.name}
+                    </p>
+                    {/* Open the modal using document.getElementById('ID').showModal() method */}
+                    <button
+                      className="btn absolute bottom-10 right-80 bg-violet-900 text-white"
+                      onClick={() =>
+                        document.getElementById("my_modal_5").showModal()
+                      }
+                    >
+                      Mas información
+                    </button>
+                    <dialog
+                      id="my_modal_5"
+                      className="modal modal-bottom sm:modal-middle "
+                    >
+                      <div className="modal-box ">
+                        <h3 className="font-bold text-xl text-green-500 ">
+                          Fecha: {event.date}!
+                        </h3>
+                        <p className="text-lg text-yellow-500">
+                          Lugar: {event.lugar}
+                        </p>
+                        <p className="py-4 text-white">
+                          Descripción: {event.description}
+                        </p>
+                        <div className="modal-action">
+                          <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn">Close</button>
+                          </form>
+                        </div>
+                      </div>
+                    </dialog>
+                  </div>
+                </div>
+              );
+            })
+          : false}
+      </div>
     </div>
   );
-};
+}
 
-export default ImageGallery;
+export default Events;
